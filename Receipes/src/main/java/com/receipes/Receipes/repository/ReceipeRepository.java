@@ -11,7 +11,6 @@ import com.receipes.Receipes.model.Receipe;
 @Repository
 public interface ReceipeRepository extends CrudRepository<Receipe, Long>{
 
-    @Query(value="SELECT DISTINCT r FROM Receipe r JOIN FETCH r.ingredients")
     List<Receipe> findAll();
 
     Receipe findReceipeByReceipeId(long receipeId);
