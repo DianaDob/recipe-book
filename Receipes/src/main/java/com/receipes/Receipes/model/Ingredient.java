@@ -4,21 +4,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Ingredient {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "seq_ingredient", sequenceName = "\"seq_ingredient\"")
+    @GeneratedValue(generator = "seq_ingredient", strategy = GenerationType.SEQUENCE)
     private long ingred_id;
     private String quantity;
     private String name;
+    private long receipeId;
 
     public Ingredient(){
     }
 
-    public Ingredient (String quantity, String name){
+    public Ingredient (String quantity, String name, long receipeId){
         this.quantity = quantity;
         this.name = name;
+        this.receipeId = receipeId;
     }
 
     public String getQuantity(){
@@ -27,5 +31,13 @@ public class Ingredient {
     
     public String getName(){
         return name;
+    }
+
+    public long getReceipeId(){
+        return receipeId;
+    }
+
+    public void setReceipeId(long receipeId) {
+        this.receipeId = receipeId;
     }
 }
