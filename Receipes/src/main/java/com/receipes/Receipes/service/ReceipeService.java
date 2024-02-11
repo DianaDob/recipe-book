@@ -35,12 +35,20 @@ public class ReceipeService {
 
     public void save(ReceipeWithIngredsDTO dto){
         Receipe entity = receipeRepository.findReceipeByReceipeId(dto.getReceipeId());
-        if(entity == null){
+        if(entity != null){
+            updateReceipeWithDTO(entity, dto);
+        }
+        else{
             entity = createReceipeEntityFromDTO(dto);
         }
         receipeRepository.save(entity);        
         ingredientService.saveIngredsForReceipe(dto.getIngredients(), entity.getReceipeId());
 
+    }
+
+    public void deleteById(long receipeId){
+        ingredientService.deleteByReceipeId(receipeId);
+        receipeRepository.deleteById(receipeId);
     }
 
     private ReceipeWithIngredsDTO createReceipeDTOFromEntity(Receipe receipe){
@@ -54,6 +62,12 @@ public class ReceipeService {
 
     private Receipe createReceipeEntityFromDTO(ReceipeWithIngredsDTO dto){
         return new Receipe(dto.getName(), dto.getPreparation());
+    }
+
+    private Receipe updateReceipeWithDTO(Receipe entity, ReceipeWithIngredsDTO dto){
+        entity.setName(dto.getName());
+        entity.setPreparation(dto.getPreparation());
+        return entity;
     }
     
 }

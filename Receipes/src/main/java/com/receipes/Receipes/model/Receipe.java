@@ -40,6 +40,14 @@ public class Receipe {
         return preparation;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setPreparation(String preparation){
+        this.preparation = preparation;
+    }
+
     @Override
     public String toString() {
         return "Receipe [receipe_id=" + receipeId + ", name=" + name + ", preparation=" + preparation

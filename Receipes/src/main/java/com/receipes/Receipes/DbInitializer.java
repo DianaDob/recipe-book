@@ -20,7 +20,7 @@ public class DbInitializer {
     
     @PostConstruct
     public void init() {
-        List<Ingredient> kaposztaIngreds = new ArrayList<Ingredient>();
+        /*List<Ingredient> kaposztaIngreds = new ArrayList<Ingredient>();
         Ingredient kaposzta = new Ingredient("1 fej", "káposzta");
         Ingredient teszta = new Ingredient("20 dkg", "tészta");
         kaposztaIngreds.add(kaposzta);
@@ -42,6 +42,6 @@ public class DbInitializer {
         receipeRepository.save(receipe1);
 		receipeRepository.save(receipe2);
 
-        receipeRepository.findAll().forEach(System.out::println);
+        receipeRepository.findAll().forEach(System.out::println);*/
     }
 }

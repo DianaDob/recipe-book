@@ -1,0 +1,1 @@
+ /usr/bin/env /usr/lib/jvm/java-17-openjdk-amd64/bin/java @/tmp/cp_avnnfuju491vzyx4j3i6cpko6.argfile com.receipes.Receipes.ReceipesApplication 

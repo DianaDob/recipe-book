@@ -3,7 +3,7 @@ package com.receipes.Receipes.dto;
 import java.io.Serializable;
 import java.util.List;
 
-import com.receipes.Receipes.model.Ingredient;
+import com.receipes.Receipes.dto.IngredientDTO;
 
 public class ReceipeWithIngredsDTO implements Serializable {
 
@@ -12,7 +12,7 @@ public class ReceipeWithIngredsDTO implements Serializable {
     private long receipeId;
     private String name;
     private String preparation;
-    private List<Ingredient> ingredients;
+    private List<IngredientDTO> ingredients;
     
     public long getReceipeId(){
         return receipeId;
@@ -26,7 +26,7 @@ public class ReceipeWithIngredsDTO implements Serializable {
         return preparation;
     }
 
-    public List<Ingredient> getIngredients(){
+    public List<IngredientDTO> getIngredients(){
         return ingredients;
     }
 
@@ -42,7 +42,7 @@ public class ReceipeWithIngredsDTO implements Serializable {
         this.preparation = preparation;
     }
 
-    public void setIngredients(List<Ingredient> ingredients){
+    public void setIngredients(List<IngredientDTO> ingredients){
         this.ingredients = ingredients;
     }
 
